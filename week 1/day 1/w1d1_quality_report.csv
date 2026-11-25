@@ -1,0 +1,20 @@
+check,table,issue_rows,severity,planned_action
+duplicate user_id,users,0,ok,none
+duplicate account_id,accounts,0,ok,none
+duplicate device_id,devices,0,ok,none
+duplicate ip_id,ip_addresses,0,ok,none
+duplicate txn_id,transactions,25,medium,"drop exact duplicates, keep first"
+"duplicate (user, device) link",user_devices,1,low,drop
+"duplicate (user, ip) link",user_ips,0,ok,none
+missing amount,transactions,8,high,drop row (cannot weight an edge)
+non-positive amount,transactions,5,high,drop row
+from_account not in accounts,transactions,0,ok,none
+to_account not in accounts,transactions,12,high,drop row (orphan edge)
+self-transfer,transactions,0,ok,none
+unparseable timestamp,transactions,0,ok,none
+status not completed,transactions,2377,info,keep as edge property (filter later)
+account.user_id not in users,accounts,0,ok,none
+account without owner (external),accounts,40,info,"keep, flag is_external"
+user_devices.user_id not in users,user_devices,0,ok,none
+user_devices.device_id not in devices,user_devices,0,ok,none
+user_ips.ip_id not in ip_addresses,user_ips,0,ok,none
