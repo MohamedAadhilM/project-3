@@ -1,0 +1,117 @@
+{
+  "nodes": {
+    "User": {
+      "key": "user_id",
+      "file": "nodes_user.csv",
+      "props": {
+        "user_id": "STRING",
+        "full_name": "STRING",
+        "email": "STRING",
+        "dob": "DATE",
+        "signup_date": "DATE",
+        "city": "STRING",
+        "kyc_level": "INT64"
+      }
+    },
+    "Account": {
+      "key": "account_id",
+      "file": "nodes_account.csv",
+      "props": {
+        "account_id": "STRING",
+        "bank_name": "STRING",
+        "account_type": "STRING",
+        "opened_date": "DATE",
+        "status": "STRING",
+        "is_external": "BOOLEAN"
+      }
+    },
+    "Device": {
+      "key": "device_id",
+      "file": "nodes_device.csv",
+      "props": {
+        "device_id": "STRING",
+        "device_type": "STRING",
+        "os": "STRING",
+        "fingerprint_hash": "STRING"
+      }
+    },
+    "IPAddress": {
+      "key": "ip_id",
+      "file": "nodes_ip.csv",
+      "props": {
+        "ip_id": "STRING",
+        "ip_address": "STRING",
+        "asn": "STRING",
+        "country": "STRING",
+        "is_vpn_proxy": "BOOLEAN"
+      }
+    },
+    "Phone": {
+      "key": "phone_hash",
+      "file": "nodes_phone.csv",
+      "props": {
+        "phone_hash": "STRING"
+      }
+    },
+    "IdentityDoc": {
+      "key": "id_doc_hash",
+      "file": "nodes_iddoc.csv",
+      "props": {
+        "id_doc_hash": "STRING"
+      }
+    }
+  },
+  "edges": {
+    "OWNS": {
+      "src": "User",
+      "dst": "Account",
+      "file": "edges_owns.csv",
+      "props": {}
+    },
+    "USES_DEVICE": {
+      "src": "User",
+      "dst": "Device",
+      "file": "edges_uses_device.csv",
+      "props": {
+        "first_seen": "DATE",
+        "last_seen": "DATE",
+        "sessions": "INT64"
+      }
+    },
+    "LOGGED_IN_FROM": {
+      "src": "User",
+      "dst": "IPAddress",
+      "file": "edges_logged_in_from.csv",
+      "props": {
+        "logins": "INT64",
+        "first_login": "DATE",
+        "last_login": "DATE"
+      }
+    },
+    "HAS_PHONE": {
+      "src": "User",
+      "dst": "Phone",
+      "file": "edges_has_phone.csv",
+      "props": {}
+    },
+    "HAS_ID_DOC": {
+      "src": "User",
+      "dst": "IdentityDoc",
+      "file": "edges_has_id_doc.csv",
+      "props": {}
+    },
+    "TRANSFERRED_TO": {
+      "src": "Account",
+      "dst": "Account",
+      "file": "edges_transferred_to.csv",
+      "props": {
+        "txn_id": "STRING",
+        "ts": "TIMESTAMP",
+        "amount": "DOUBLE",
+        "currency": "STRING",
+        "channel": "STRING",
+        "status": "STRING"
+      }
+    }
+  }
+}

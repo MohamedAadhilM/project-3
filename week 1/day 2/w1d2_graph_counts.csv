@@ -1,0 +1,13 @@
+kind,label,file,count
+node,User,nodes_user.csv,6132
+node,Account,nodes_account.csv,8085
+node,Device,nodes_device.csv,6449
+node,IPAddress,nodes_ip.csv,3186
+node,Phone,nodes_phone.csv,6076
+node,IdentityDoc,nodes_iddoc.csv,6115
+edge,OWNS,edges_owns.csv,8045
+edge,USES_DEVICE,edges_uses_device.csv,7134
+edge,LOGGED_IN_FROM,edges_logged_in_from.csv,6299
+edge,HAS_PHONE,edges_has_phone.csv,6132
+edge,HAS_ID_DOC,edges_has_id_doc.csv,6132
+edge,TRANSFERRED_TO,edges_transferred_to.csv,58918

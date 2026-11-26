@@ -1,0 +1,10 @@
+rule,rows_removed
+duplicate txn_id,25
+missing amount,8
+non-positive amount,5
+orphan from_account,0
+orphan to_account,12
+self-transfer,0
+unparseable timestamp,0
+duplicate user_devices link,1
+duplicate user_ips link,0

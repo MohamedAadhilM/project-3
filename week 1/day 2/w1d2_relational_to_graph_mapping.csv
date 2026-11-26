@@ -1,0 +1,11 @@
+relational_source,graph_element,properties
+users,User node,"user_id, full_name, email, dob, signup_date, city, kyc_level"
+users.phone_hash,Phone node + (User)-[HAS_PHONE]->(Phone),phone_hash (shared phones link users)
+users.id_doc_hash,IdentityDoc node + (User)-[HAS_ID_DOC]->(IdentityDoc),id_doc_hash (shared documents = synthetic identities)
+accounts,Account node (+ is_external flag),"account_id, bank_name, account_type, opened_date, status, is_external"
+accounts.user_id,(User)-[OWNS]->(Account),none
+devices,Device node,"device_id, device_type, os, fingerprint_hash"
+user_devices,(User)-[USES_DEVICE]->(Device),"first_seen, last_seen, sessions"
+ip_addresses,IPAddress node,"ip_id, ip_address, asn, country, is_vpn_proxy"
+user_ips,(User)-[LOGGED_IN_FROM]->(IPAddress),"logins, first_login, last_login"
+transactions,(Account)-[TRANSFERRED_TO]->(Account),"txn_id, ts, amount, currency, channel, status"
