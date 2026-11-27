@@ -1,0 +1,49 @@
+check,passed
+User: constraint exists,True
+User: CSV columns == schema properties,True
+User: load statement present,True
+User: key unique in data,True
+Account: constraint exists,True
+Account: CSV columns == schema properties,True
+Account: load statement present,True
+Account: key unique in data,True
+Device: constraint exists,True
+Device: CSV columns == schema properties,True
+Device: load statement present,True
+Device: key unique in data,True
+IPAddress: constraint exists,True
+IPAddress: CSV columns == schema properties,True
+IPAddress: load statement present,True
+IPAddress: key unique in data,True
+Phone: constraint exists,True
+Phone: CSV columns == schema properties,True
+Phone: load statement present,True
+Phone: key unique in data,True
+IdentityDoc: constraint exists,True
+IdentityDoc: CSV columns == schema properties,True
+IdentityDoc: load statement present,True
+IdentityDoc: key unique in data,True
+"OWNS: CSV columns == src_id, dst_id, props",True
+OWNS: load statement present,True
+"USES_DEVICE: CSV columns == src_id, dst_id, props",True
+USES_DEVICE: load statement present,True
+"LOGGED_IN_FROM: CSV columns == src_id, dst_id, props",True
+LOGGED_IN_FROM: load statement present,True
+"HAS_PHONE: CSV columns == src_id, dst_id, props",True
+HAS_PHONE: load statement present,True
+"HAS_ID_DOC: CSV columns == src_id, dst_id, props",True
+HAS_ID_DOC: load statement present,True
+"TRANSFERRED_TO: CSV columns == src_id, dst_id, props",True
+TRANSFERRED_TO: load statement present,True
+bulk header ok: nodes_user.csv,True
+bulk header ok: nodes_account.csv,True
+bulk header ok: nodes_device.csv,True
+bulk header ok: nodes_ip.csv,True
+bulk header ok: nodes_phone.csv,True
+bulk header ok: nodes_iddoc.csv,True
+bulk header ok: edges_owns.csv,True
+bulk header ok: edges_uses_device.csv,True
+bulk header ok: edges_logged_in_from.csv,True
+bulk header ok: edges_has_phone.csv,True
+bulk header ok: edges_has_id_doc.csv,True
+bulk header ok: edges_transferred_to.csv,True

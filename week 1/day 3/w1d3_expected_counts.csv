@@ -1,0 +1,13 @@
+kind,label,count
+node,User,6132
+node,Account,8085
+node,Device,6449
+node,IPAddress,3186
+node,Phone,6076
+node,IdentityDoc,6115
+edge,OWNS,8045
+edge,USES_DEVICE,7134
+edge,LOGGED_IN_FROM,6299
+edge,HAS_PHONE,6132
+edge,HAS_ID_DOC,6132
+edge,TRANSFERRED_TO,58918

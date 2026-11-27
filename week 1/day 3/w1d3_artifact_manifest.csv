@@ -1,0 +1,19 @@
+file,purpose,bytes
+neo4j/constraints.cypher,Uniqueness constraints for every node key,648
+neo4j/indexes.cypher,"Secondary indexes (city, VPN flag, transfer time and amount)",451
+neo4j/load_csv.cypher,"Online load with LOAD CSV, batched in transactions of 5,000 rows",3629
+neo4j/validation_queries.cypher,Post-load counts and first fraud-footprint queries,857
+data/neo4j_import/import.sh,Offline neo4j-admin bulk import command,836
+docker-compose.yml,"Neo4j 5.26 with APOC + Graph Data Science, both import mounts",570
+data/neo4j_import/nodes_user.csv,"bulk-import node: User (6,132 rows)",492222
+data/neo4j_import/nodes_account.csv,"bulk-import node: Account (8,085 rows)",377176
+data/neo4j_import/nodes_device.csv,"bulk-import node: Device (6,449 rows)",270424
+data/neo4j_import/nodes_ip.csv,"bulk-import node: IPAddress (3,186 rows)",122931
+data/neo4j_import/nodes_phone.csv,"bulk-import node: Phone (6,076 rows)",103313
+data/neo4j_import/nodes_iddoc.csv,"bulk-import node: IdentityDoc (6,115 rows)",103983
+data/neo4j_import/edges_owns.csv,"bulk-import relationship: OWNS (8,045 rows)",136798
+data/neo4j_import/edges_uses_device.csv,"bulk-import relationship: USES_DEVICE (7,134 rows)",297867
+data/neo4j_import/edges_logged_in_from.csv,"bulk-import relationship: LOGGED_IN_FROM (6,299 rows)",268227
+data/neo4j_import/edges_has_phone.csv,"bulk-import relationship: HAS_PHONE (6,132 rows)",153331
+data/neo4j_import/edges_has_id_doc.csv,"bulk-import relationship: HAS_ID_DOC (6,132 rows)",153337
+data/neo4j_import/edges_transferred_to.csv,"bulk-import relationship: TRANSFERRED_TO (58,918 rows)",4642552
